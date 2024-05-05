@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script lists all currently running processes, including those without a TTY.
+# It displays the process hierarchy in a user-friendly format.
+
+# Get process information using 'ps' command
+# -e: Select all processes
+# -o: Specify custom output format
+# --forest: Display process hierarchy
+# --no-headers: Exclude header line from output
+ps -eo pid,ppid,user,cmd --forest --no-headers
