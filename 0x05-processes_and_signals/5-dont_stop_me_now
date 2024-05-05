@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script stops the 4-to_infinity_and_beyond process.
+
+# Get the PID of the running script
+my_pid=$$
+
+# Terminate the 4-to_infinity_and_beyond process
+kill "$my_pid"
+
+# Display a message indicating termination
+echo "Terminated"

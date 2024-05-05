@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script stops the 4-to_infinity_and_beyond process gracefully.
+
+# Create a temporary file to signal termination
+touch /tmp/stop_4_to_infinity
+
+# Wait for the process to exit
+while pgrep -f "4-to_infinity_and_beyond" > /dev/null; do
+    sleep 1
+done
+
+# Clean up the temporary file
+rm /tmp/stop_4_to_infinity
+
+# Display a message indicating termination
+echo "Terminated"
