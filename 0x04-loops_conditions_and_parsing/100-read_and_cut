@@ -1,0 +1,9 @@
+#!/bin/bash
+# Display user information from /etc/passwd
+
+while IFS=: read -r user _ uid _ _ home _; do
+    echo "Username: $user"
+    echo "User ID: $uid"
+    echo "Home Directory: $home"
+done < "/etc/passwd"
+

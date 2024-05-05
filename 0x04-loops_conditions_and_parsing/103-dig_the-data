@@ -1,0 +1,8 @@
+#!/bin/bash
+# Parse Apache log file to group visitors by IP and HTTP status code
+
+# Assuming the log file is named "apache-access.log"
+LOG_FILE="apache-access.log"
+
+# Use awk to count occurrences and print IP and status code
+awk -F'|' '{ a[$1" "$6]++ } END { for (i in a) print a[i], i }' "$LOG_FILE" | sort -nr
