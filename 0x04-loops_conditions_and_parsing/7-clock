@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Display time for 12 hours and 59 minutes
+
+count_hours=0
+count_minutes=1
+
+while [ "$count_hours" -lt 12 ]; do
+    # Display hours (0 to 11)
+    printf "%02d:%02d AM\n" "$count_hours" "$count_minutes"
+    count_hours=$((count_hours + 1))
+done
+
+# Display 12:59 PM
+printf "%02d:%02d PM\n" 12 "$count_minutes"

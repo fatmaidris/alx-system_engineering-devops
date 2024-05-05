@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# List files in the current directory (excluding hidden files)
+# Display only the part of the name after the first dash
+
+for file in *; do
+    # Check if the file is not a directory and does not start with a dot (hidden file)
+    if [ -f "$file" ] && [[ "$file" != .* ]]; then
+        # Extract the part of the name after the first dash
+        name_after_dash=$(echo "$file" | cut -d'-' -f2-)
+        echo "$name_after_dash"
+    fi
+done
