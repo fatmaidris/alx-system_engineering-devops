@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script displays lines containing the word "bash" and extracts their PIDs.
+
+# Disable shellcheck warning for the next line
+# shellcheck disable=SC2009
+ps aux | grep -w "bash" | grep -v "grep" | awk '{print $2}'
