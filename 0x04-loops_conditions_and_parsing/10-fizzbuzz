@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# FizzBuzz in Bash
+
+for num in {1..100}; do
+    output=""
+    
+    if ((num % 3 == 0)); then
+        output+="Fizz"
+    fi
+    
+    if ((num % 5 == 0)); then
+        output+="Buzz"
+    fi
+    
+    # If neither Fizz nor Buzz, use the number itself
+    if [ -z "$output" ]; then
+        output="$num"
+    fi
+    
+    echo "$output"
+done
