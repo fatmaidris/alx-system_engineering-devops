@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script sets up a listening socket on port 98
+
+if ! command -v nc &> /dev/null
+then
+    echo "nc could not be found, please install netcat."
+    exit 1
+fi
+
+while true; do
+    # Start listening on port 98. Use -k to keep the server listening for new connections after the current connection is completed.
+    # Use -l to listen for an incoming connection rather than initiate a connection to a remote host.
+    # The -p option specifies the local port number.
+    # The -v option enables verbose mode to display connection information.
+    nc -lkvp 98
+done
